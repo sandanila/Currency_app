@@ -3,6 +3,7 @@ import cors from "cors";
 import axios from "axios";
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 //middlewares
 app.use(express.json());
@@ -46,6 +47,6 @@ app.get("/convert", async(req, res) => {
 });
 
 //listen to port
-app.listen(5000, () => {
-  console.log("SERVER STARTED");
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`SERVER STARTED ON PORT ${PORT}`);
 });
