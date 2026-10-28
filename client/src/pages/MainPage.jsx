@@ -15,7 +15,7 @@ function MainPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:5000/convert", {
+      const response = await axios.get("https://currency-app-53c24.containers.snapdeploy.app/convert", {
         params: {
           date,
           sourceCurrency,
@@ -38,7 +38,7 @@ function MainPage() {
     const getCurrencyNames = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/getAllCurrencies",
+          "https://currency-app-53c24.containers.snapdeploy.app/getAllCurrencies",
         );
         setCurrencyNames(response.data);
       } catch (err) {
